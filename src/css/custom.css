@@ -63,3 +63,6 @@
 .inner_container_wrapper {
   height: calc(100% - 100px) !important;
 }
+.default_ui_container {
+ color: rgb(18, 18, 18) !important;
+}

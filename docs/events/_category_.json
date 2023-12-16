@@ -1,6 +1,6 @@
 {
-  "label": "File Sources",
-  "position": 8,
+  "label": "Events",
+  "position": 11,
   "link": {
     "type": "generated-index",
     "description": "5 minutes to learn the most important Docusaurus concepts."

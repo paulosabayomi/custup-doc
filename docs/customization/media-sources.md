@@ -6,13 +6,19 @@ sidebar_position: 3
 
 You can also customise the Media source UI styles, the media source elements are not part of the default UI elements, they gets added to the default UI as a popup and the main media sources container wrapper gets appended to the default UI's inner container.  
 
-### Element Styles
+## Element Styles
 
-| Style | Description |
-| ---- | ---- |
-container | the media source container wrapper
-media_capture_main_container | the media source container main
-media_capture_bottom_tools_container | the media sources bottom tools wrapper container
+### container
+
+The media source container wrapper
+
+### media_capture_main_container
+
+The media source container main
+
+### media_capture_bottom_tools_container
+
+The media sources bottom tools wrapper container
 
 While these styles seems fews there are other inner elements that were not given class names, like the bottom tools, the were styled using css selector  
   
