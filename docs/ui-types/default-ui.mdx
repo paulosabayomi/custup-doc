@@ -1,0 +1,26 @@
+---
+sidebar_position: 2
+---
+
+# Default
+
+import React from 'react';
+import CustUp from 'custup/src/custup.min.js';
+
+The default UI type uses the default styles that were used to develop CustUp, it can also be customized to meet the need of your projects.
+
+export const DUI = ({}) => {
+    React.useEffect(() => {
+        const instance1 = new CustUp({
+            targetRootElement: "#container-1",
+            default_styles_override: {
+                outerContainer: ["custup_outer_contaner", true],
+            }
+        })
+    }, [])
+    return (<></>)
+}
+
+<div id="container-1"></div>
+
+<DUI />

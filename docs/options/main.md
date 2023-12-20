@@ -331,14 +331,14 @@ const instance1 = new CustUp({
 ### css_font_link
 
 ::::tip Note
-Only Google Fonts link is currently supported out of the box, other fonts link may not work as expected
+Only Google Fonts links are currently supported out of the box, other font links may not work as expected
 ::::
 
 - *Optional*
 - **Type:** *`string`*
 - Default: `https://fonts.googleapis.com/css2?family=Lato&display=swap`
 
-To change CustUp's font set this to a link to Google Fonts
+To change CustUp's font set this to a link to a Google Font you want to use
 
 ### css_font_name
 
@@ -492,9 +492,9 @@ const instance1 = new CustUp({
 - **Type:** *`boolean`*
 - Default: `false`
 
-This option is for specifying whether all the files should be uploaded at onces of they should be uploaded one after the order or simply orderly, if sets to `true` when the upload function is triggered all the files will be uploaded at once and the CustUp's `onprogress` event will be fired for the combined upload.  
+This option is for specifying whether all the files should be uploaded at once or if they should be uploaded one after the other or simply orderly, if sets to `true` when the upload function is triggered all the files will be uploaded at once and the CustUp's `onprogress` event will be fired for the combined upload.  
   
-It is useful in the case of uploading all files together with the form field when the form submit button is clicked.
+**Use Case:** When there is a need to upload all files together with the form field when the form submit button is clicked.
 
 ## Default files
 

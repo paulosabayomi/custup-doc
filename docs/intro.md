@@ -12,7 +12,11 @@ CustUp which is the short for Customizable Uploader was made to be >95% customiz
 
 ### Things you might want to know about CustUp
 
-- Easily change the UI design or create your own UI just by overriding or adding to the CSS classes of the Elements
+- You can easily change the UI design or create your own UI just by overriding or adding to the CSS classes of the Elements
 - With the instance attachment feature, you can create multiple CustUp instances and upload all files at once together with form fields and/or additional data
 - You can get all the selected files and upload them manually
 - You don't need to worry about installing HTTP client to manage your upload requests because axios was bundled into CustUp which you can easily configure.
+
+## Inspiration
+
+When I was working on a freelance project that has a custom file upload UI design some years back, I searched for libraries that can fit into the design or one that has an option to change the UI style to fit into my project and that does not have any dependencies but I couldn't find any that fit into the description and I had to write a custom implementation for the file uploader from scratch, and then few years later I decided to build a file upload library that fits into the description of the library I couldn't find then.

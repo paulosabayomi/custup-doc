@@ -5,7 +5,7 @@ sidebar_position: 1
 # Overview
 
 import React from 'react'
-import CustUp from "custup/src/custup.min.js";
+import CustUp from "custup/src/custup.min";
 
 The main reason why CustUp was made is so that it can be fully customized and adapted to any project design quickly and by just changing or adding to the CSS classes.  
   
@@ -27,16 +27,17 @@ export const CustUpUI = ({}) => {
         sidebarRightContainer: 'side_bar_right',
         custupInnerContainerWrapperEl: ['inner_container_wrapper', true],
         defaultUI: '',
+        fileUIOuterContainer: ['file_ui_outer', true]
       },
       allowed_tools: null
     })
   }, [])
   return (
-    <></>
+    <>
+      <div id="container" style={{marginBottom: 10, width: '100%', display: 'flex', justifyContent: 'center'}}></div>
+    </>
   )
 }
-
-<div id="container" style={{marginBottom: 10, width: '100%', display: 'flex', justifyContent: 'center'}}></div>
 
 <CustUpUI />  
   

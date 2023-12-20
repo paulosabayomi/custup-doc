@@ -69,3 +69,7 @@ You can include the CSS files from UNPKG like
 <!-- ResumeUploader UI CSS file -->
 <link rel="stylesheet" href="https://unpkg.com/custup@0.0.3/src/resumeUploaderUI.min.css">
 ```
+
+## Using with React JS
+
+CustUp can also work in React JS applications, check out the guide on how to [install and use CustUp in your React JS application here](/docs/guides/react-integration).

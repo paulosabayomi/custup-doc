@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Allowed sources
 
-These are all the currently available file select sources, read more about them [here](/docs/category/file-sources/)
+These are all the currently available file select sources.
 
 - **record_video**
 - **capture_image**

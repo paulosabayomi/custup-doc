@@ -16,11 +16,11 @@ const config = {
   url: 'https://pryxy.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/custup/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Paulos Ab', // Usually your GitHub org/user name.
+  organizationName: 'Abayomi Amusa', // Usually your GitHub org/user name.
   projectName: 'custup', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -44,14 +44,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/paulosabayomi/custup-doc',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/paulosabayomi/custup-doc',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -78,10 +78,14 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: 'examples', label: 'Examples', position: 'left'},
           {
             href: 'https://github.com/paulosabayomi/custup',
             label: 'GitHub',
+            position: 'left',
+          },
+          {
+            type: 'docsVersionDropdown',
             position: 'right',
           },
         ],
@@ -89,15 +93,15 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Documentation',
-                to: '/docs/intro',
-              },
-            ],
-          },
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Documentation',
+          //       to: '/docs/intro',
+          //     },
+          //   ],
+          // },
           // {
           //   title: 'Community',
           //   items: [

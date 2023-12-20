@@ -1,8 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 ---
 
-# Quick Guide
+# Basics
+
+First of all import CustUp
 
 ```js
 import CustUp from "/path/to/custup/src/custup.min.js"
@@ -14,7 +16,6 @@ Basic options
 const options = {
     targetRootElement: "#container",
     allowed_file_types: ['mp3', "mp4", "jpg", "png", "jpeg","pdf"],
-    targetRootElement: '#container',
     maxNumberOfFiles: 5,
     minNumberOfFiles: 3,
     maximumAllowedFileSize: 10000000,
@@ -106,37 +107,6 @@ const options = {
 const uploader = new CustUp(options)
 ```
 
-### File Select Sources
-
-CustUp file select sources is divided into External and Media Sources
-
-#### External Sources are
-
-- Google Drive
-- Dropbox
-- Box
-- OpenAI DALL.E-3
-- URL
-Onedrive is not currently supported, will be added in the future version
-
-#### And Media Sources are
-
-- Camera
-- Video Recording
-- Audio Recording
-- Screen Recording
-You can choose which sources to allow and the order in which you want them to appear on the UI
-
-```js
-const options = {
-    // ...
-    allowed_sources: ['dropbox_source'], // only Dropbox file source icon will be displayed on the UI    
-    // allowed_sources: ['openai_dalle_source', 'capture_image', 'box_source'], // only OpenAI DALL.E-3, Image capture from media devices and Box icons will be displayed and ordered as listed in the array 
-}
-
-const uploader = new CustUp(options)
-```
-
 If you wants to use another HTML elements to control the upload, you can set the UI tools to not display on the default UI.
 
 ```js
@@ -145,6 +115,16 @@ const options = {
     display_ui_tools: false,
 }
 
+const uploader = new CustUp(options)
+```
+
+Even the CustUp scrolling and scrollbar are custom made so you can also customize them, to not show the scrollbar set `disable_scrollbar` to `false`
+
+```js
+const options = {
+    // ...
+    disable_scrollbar: false
+}
 const uploader = new CustUp(options)
 ```
 
@@ -161,40 +141,3 @@ const options = {
 }
 const uploader = new CustUp(options)
 ```
-
-Even the CustUp scrolling and scrollbar are custom made so you can also customize them, to not show the scrollbar set `disable_scrollbar` to `false`
-
-```js
-const options = {
-    // ...
-    disable_scrollbar: false
-}
-const uploader = new CustUp(options)
-```
-
-#### Attaching instances
-
-Guess the maximum number of CustUp instances that can be on a single page, `Infinity`, and up to the maximum capacity of your user's device memory, so also it is also possible to attach one or more CustUp instances to another instance basically for collective file upload, that is if you have more than one CustUp instances on a single page and you would like to upload all the files added to all the instances together in a single upload.  
-**For Example**
-
-```js
-const instance1 = new CustUp({...});
-const instance2 = new CustUp({...});
-const instance3 = new CustUp({...});
-const instance4 = new CustUp({
-    //...
-    instance_attach: [instance1, instance2, instance3],
-    // single_upload: true,
-});
-instance4.upload();
-```
-
-`single_upload` when set to true and used with `instance_attach` it is useful if all files should be uploaded at once, if false then upload event will be triggered for each of the files in all of the attached instances
-
-Customization
-UI choices
-Instances attachment
-File Sources
-Options
-Methods
-Events

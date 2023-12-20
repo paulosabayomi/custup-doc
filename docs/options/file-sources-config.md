@@ -211,10 +211,10 @@ The API key is required to use DALL.E-3, you can generate an API key here
 ```js
 {
   api_key: string;
-  size: "1024x1024" \| "1024x1792" \| "1792x1024";
+  size: "1024x1024" | "1024x1792" | "1792x1024";
   n: number;
-  model: "dall-e-3" \| "dall-e-2";
-  quality: "standard" \| "hd";
+  model: "dall-e-3" | "dall-e-2";
+  quality: "standard" | "hd";
 }
 ```
 

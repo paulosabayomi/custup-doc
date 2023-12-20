@@ -2,28 +2,36 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 import 'custup/src/all.min.css'
+import HomePageShowcase from '../components/HomePageShowCase';
+import SupportedLangs from '../components/SupportedLangs';
+import Features from '../components/Features';
 
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
+        <img src={require('./../../static/img/custup.png').default} className={styles.custuplogo} />
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+              {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <div style={{display: 'flex', justifyContent: 'center', marginTop: 40}}>
+          <div style={{fontSize: '130%', width: '60%'}}>
+            Stop settling, start customizing. CustUp is the ultimate file upload toolbox, built for 
+            developers who dare to dream. Endless options, zero limitations. Go bold!
+          </div>
+        </div>
+        <div style={{marginTop: 10}}>
           <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Customisable File Uploader
+              className="button button--secondary button--lg"
+              to="/docs/intro">
+              Get Started
           </Link>
         </div>
       </div>
@@ -39,7 +47,9 @@ export default function Home() {
       >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <HomePageShowcase />
+        <SupportedLangs />
+        <Features />
       </main>
     </Layout>
   );
