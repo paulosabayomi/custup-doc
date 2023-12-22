@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcustup_doc=self.webpackChunkcustup_doc||[]).push([[430],{8650:e=>{e.exports=JSON.parse('{"title":"UI types","slug":"/category/ui-types","permalink":"/docs/category/ui-types","navigation":{"previous":{"title":"Events","permalink":"/docs/events"},"next":{"title":"Introduction","permalink":"/docs/ui-types/intro"}}}')}}]);
