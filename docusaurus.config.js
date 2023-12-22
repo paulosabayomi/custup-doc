@@ -44,14 +44,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/paulosabayomi/custup-doc',
+            'https://github.com/paulosabayomi/custup-doc-files/tree/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/paulosabayomi/custup-doc',
+            'https://github.com/paulosabayomi/custup-doc-files/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -85,9 +85,14 @@ const config = {
             position: 'left',
           },
           {
-            type: 'docsVersionDropdown',
-            position: 'right',
+            href: 'https://github.com/paulosabayomi/CustUp/issues',
+            label: 'Support',
+            position: 'left',
           },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {

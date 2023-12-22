@@ -13,6 +13,10 @@ const HomePageShowcase = React.memo(() => {
             default_styles_override: {
                 outerContainer: ["custup_outer_contaner", true],
                 defaultUIUploadSentenceContainer: ['sentence_container', true]
+            },
+            file_upload: {
+                endpoint_url: 'https://66.29.145.150:6700/fileupload',
+                files_field_name: 'profileImage',
             }
         })
         const _inst2 = new CustUp({
@@ -55,8 +59,8 @@ const HomePageShowcase = React.memo(() => {
                 {file: "https://random.imagecdn.app/1000/800", isUploadable: true},
             ],
             file_upload: {
-                endpoint_url: 'http://localhost:6700/fileupload',
-                files_field_name: 'profileImage2',
+                endpoint_url: 'https://66.29.145.150:6700/fileupload',
+                files_field_name: 'profileImage',
             }
         })
     }, [])

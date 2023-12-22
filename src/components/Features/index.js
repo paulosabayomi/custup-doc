@@ -11,6 +11,7 @@ const Features = React.memo(() => {
                 <div>Customize the UI to fit your project</div> 
                 <div>Easily build your own UI</div> 
                 <div>Attach multiple CustUp instances together for combined file upload</div> 
+                <div>Generate images with DALL.E-3</div> 
             </div>
             <div>
                 <Link

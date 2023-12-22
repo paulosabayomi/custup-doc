@@ -8,7 +8,7 @@ It is very easy to integrate CustUp in your web and mobile application
 
 ## Installed via NPM
 
-if you install it through npm, you can import it directly
+CustUp should be imported like so
 
 ```js
 import CustUp from "/path/to/custup/src/custup.min.js"
@@ -19,6 +19,14 @@ import CustUp from "/path/to/custup/src/custup.min.js"
 const instance1 = new CustUp({
     targetRootElement: "#container"
 })
+```
+
+if you get `Uncaught SyntaxError: import declarations may only appear at top level of a module` error add `type="module"` to the javascript file where CustUp was imported into, example below
+
+```html
+<!-- If CustUp was imported into a script name called index.js add type="module" -->
+<!-- ... -->
+<script type="module" src="./index.js"></script>
 ```
 
 Then add the CSS file to the header
@@ -43,10 +51,10 @@ and that's all you need to get CustUp running, the only required option is the `
 ## UNPKG CDN option
 
 ```js
-import CustUp from 'https://unpkg.com/custup@0.0.3/src/custup.min.js' 
+import CustUp from 'https://unpkg.com/custup@latest/src/custup.min.js' 
 
 // OR unminified version
-import CustUp from 'https://unpkg.com/custup@0.0.3/src/custup.js' 
+import CustUp from 'https://unpkg.com/custup@latest/src/custup.js' 
 
 const instance1 = new CustUp({
     targetRootElement: "#container"
@@ -57,17 +65,17 @@ You can include the CSS files from UNPKG like
 
 ```html
 <!--All the CSS files combined together -->
-<link rel="stylesheet" href="https://unpkg.com/custup@0.0.3/src/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/all.min.css">
 
 <!-- OR individual CSS files -->
 <!-- Bare UI CSS file -->
-<link rel="stylesheet" href="https://unpkg.com/custup@0.0.3/src/bare.min.css">
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/bare.min.css">
 <!-- CustUp default UI CSS file -->
-<link rel="stylesheet" href="https://unpkg.com/custup@0.0.3/src/custup.min.css">
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/custup.min.css">
 <!-- Detached UI CSS file -->
-<link rel="stylesheet" href="https://unpkg.com/custup@0.0.3/src/detached.min.css">
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/detached.min.css">
 <!-- ResumeUploader UI CSS file -->
-<link rel="stylesheet" href="https://unpkg.com/custup@0.0.3/src/resumeUploaderUI.min.css">
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/resumeUploaderUI.min.css">
 ```
 
 ## Using with React JS
