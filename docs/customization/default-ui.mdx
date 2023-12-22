@@ -17,6 +17,10 @@ export const CustUpUI = ({}) => {
         outerContainer: ['custup_outer_contaner', true],
         defaultUIUploadSentenceContainer: ['default_ui_container', true]
       },
+      file_upload: {
+          endpoint_url: 'http://api.pryxy.com/fileupload',
+          files_field_name: 'profileImage',
+      }
     })
   }, [])
   return (

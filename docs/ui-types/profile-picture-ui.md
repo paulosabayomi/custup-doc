@@ -16,7 +16,11 @@ export const ProfilePictureUI = ({}) => {
             default_styles_override: {
                 outerContainer: ["custup_outer_contaner", true],
             },
-            ui_type: 'profilePicture'
+            ui_type: 'profilePicture',
+            file_upload: {
+                endpoint_url: 'http://api.pryxy.com/fileupload',
+                files_field_name: 'profileImage',
+            }
         })
     }, [])
     return (<></>)

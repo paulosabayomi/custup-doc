@@ -16,7 +16,11 @@ export const DetachedUI = ({}) => {
             default_styles_override: {
                 outerContainer: ["custup_outer_contaner", true],
             },
-            ui_type: 'detached'
+            ui_type: 'detached',
+            file_upload: {
+                endpoint_url: 'http://api.pryxy.com/fileupload',
+                files_field_name: 'profileImage',
+            }
         })
     }, [])
     return (<></>)

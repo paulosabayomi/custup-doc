@@ -20,7 +20,11 @@ export const ResumeUploader = ({}) => {
             },
             ui_type: 'resumeUploaderUI',
             allowed_file_types: ['pdf'],
-            maximumAllowedFileSize: 10000000
+            maximumAllowedFileSize: 10000000,
+            file_upload: {
+                endpoint_url: 'http://api.pryxy.com/fileupload',
+                files_field_name: 'profileImage',
+            }
         })
     }, [])
     return (<></>)

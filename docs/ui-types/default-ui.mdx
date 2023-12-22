@@ -15,6 +15,10 @@ export const DUI = ({}) => {
             targetRootElement: "#container-1",
             default_styles_override: {
                 outerContainer: ["custup_outer_contaner", true],
+            },
+            file_upload: {
+                endpoint_url: 'http://api.pryxy.com/fileupload',
+                files_field_name: 'profileImage',
             }
         })
     }, [])
