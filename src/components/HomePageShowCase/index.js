@@ -15,7 +15,7 @@ const HomePageShowcase = React.memo(() => {
                 defaultUIUploadSentenceContainer: ['sentence_container', true]
             },
             file_upload: {
-                endpoint_url: 'http://api.pryxy.com/fileupload',
+                endpoint_url: 'https://api.pryxy.com/fileupload',
                 files_field_name: 'profileImage',
             }
         })
@@ -33,7 +33,7 @@ const HomePageShowcase = React.memo(() => {
                 {file: "https://random.imagecdn.app/1000/800", isUploadable: true},
             ],
             file_upload: {
-                endpoint_url: 'http://api.pryxy.com/fileupload',
+                endpoint_url: 'https://api.pryxy.com/fileupload',
                 files_field_name: 'profileImage',
             }
         })
@@ -59,7 +59,7 @@ const HomePageShowcase = React.memo(() => {
                 {file: "https://random.imagecdn.app/1000/800", isUploadable: true},
             ],
             file_upload: {
-                endpoint_url: 'http://api.pryxy.com/fileupload',
+                endpoint_url: 'https://api.pryxy.com/fileupload',
                 files_field_name: 'profileImage',
             }
         })

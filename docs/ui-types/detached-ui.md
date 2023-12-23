@@ -18,7 +18,7 @@ export const DetachedUI = ({}) => {
             },
             ui_type: 'detached',
             file_upload: {
-                endpoint_url: 'http://api.pryxy.com/fileupload',
+                endpoint_url: 'https://api.pryxy.com/fileupload',
                 files_field_name: 'profileImage',
             }
         })
