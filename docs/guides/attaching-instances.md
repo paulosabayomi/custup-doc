@@ -19,4 +19,4 @@ const instance4 = new CustUp({
 instance4.upload();
 ```
 
-`single_upload` is required to be set to `true`, because currently the main purpose of instance attachment is for combined file upload for single upload. Read more on `single_upload` [here](/docs/options/main#single_upload).
+`single_upload` is required to be set to `true`, because currently the main purpose of instance attachment is for combined file upload for single upload. Read more on `single_upload` [here](/docs/options/general#single_upload).
