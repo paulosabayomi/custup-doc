@@ -86,7 +86,12 @@ const config = {
           },
           {
             href: 'https://github.com/paulosabayomi/CustUp/issues',
-            label: 'Support',
+            label: 'Get Support',
+            position: 'left',
+          },
+          {
+            href: 'https://twitter.com/custup_',
+            label: 'X/Twitter',
             position: 'left',
           },
           // {

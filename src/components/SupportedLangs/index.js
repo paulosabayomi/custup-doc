@@ -5,13 +5,25 @@ const SupportedLangs = React.memo(() => {
     return (
         <div className={styles.supportedLangs}>
             <div className={styles.headerText}>
-                You can use CustUp with
+                You can currently use CustUp in
             </div>
             <div className={styles.langlistCont}>
-                <img src={require('./../../../static/img/javascript.png').default} />
-                <img src={require('./../../../static/img/react.png').default} />
-                <img src={require('./../../../static/img/electron.png').default} />
-                <img src={require('./../../../static/img/cordova.png').default} />
+                <a href="https://developer.mozilla.org/" className={styles.langLink}>
+                    <img src={require('./../../../static/img/javascript.png').default} />
+                    <div>Vanilla JavaScript</div> 
+                </a>
+                <a href="https://react.dev/" className={styles.langLink}>
+                    <img src={require('./../../../static/img/react.png').default} />
+                    <div>React JS</div> 
+                </a>
+                <a href="https://www.electronjs.org/" className={styles.langLink}>
+                    <img src={require('./../../../static/img/electron.png').default} />
+                    <div>Electron JS</div>
+                </a>
+                <a href="https://cordova.apache.org/" className={styles.langLink}>
+                    <img src={require('./../../../static/img/cordova.png').default} />
+                    <div>Apache Cordova</div>
+                </a>
             </div>
         </div>
     )

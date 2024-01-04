@@ -4,6 +4,10 @@ sidebar_position: 3
 
 # Bare
 
+::::tip Note
+This UI type does not have any tools, for example the upload button tool, because it was made for single file upload or combined file upload. so it is best to set the `single_upload` option to `true` or you can add your own custom tools/buttons functions.
+::::
+
 import React from 'react';
 import CustUp from 'custup/src/custup.min.js';
 

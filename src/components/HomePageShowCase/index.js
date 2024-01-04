@@ -63,6 +63,21 @@ const HomePageShowcase = React.memo(() => {
                 files_field_name: 'profileImage',
             }
         })
+        const _inst4 = new CustUp({
+            targetRootElement: "#container-4",
+            allowed_sources: ['openai_dalle_source'],
+            _custupDefaultUploadSentence: "Click the OpenAI logo below to generate images with Dalle-3, or Drag files to upload or Click to select file from device",
+            default_styles_override: {
+              outerContainer: ['custup_outer_contaner', true],
+            },
+            position_container: {"beforeEl": "#try-it-out-2"},
+            allowed_tools: null,
+            file_upload: {
+                endpoint_url: 'https://api.pryxy.com/fileupload',
+                files_field_name: 'profileImage',
+            }
+        })
+        _inst4.launch_dalle_source();
     }, [])
 
     return (
@@ -86,6 +101,19 @@ const HomePageShowcase = React.memo(() => {
                     Or customize it to fit your project
                 </div>
                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 15}} id="try-it-out">
+                    <Link
+                        className="button button--secondary button--lg"
+                        to="/docs/installation">
+                        Try it out
+                    </Link>
+                </div>
+            </div>
+            <div className={styles.custupContainer1} id="container-4">
+                <div style={{width: "100%", textAlign: 'center', marginTop: 20, marginBottom: 20}}>
+                    And you can also Generate images with OpenAI DALL.E, this demo will not work 
+                    because I didn't provide my API key as that would cost me alot :)
+                </div>
+                <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 15}} id="try-it-out-2">
                     <Link
                         className="button button--secondary button--lg"
                         to="/docs/installation">

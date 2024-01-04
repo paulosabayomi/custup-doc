@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# Main
+# General
 
-The complete list of all the main options for customizing or configuring CustUp
+The complete list of all the main options for customizing and configuring CustUp
 
-## General Options
+## Main Options
 
 ### targetRootElement
 
@@ -232,45 +232,7 @@ const instance1 = new CustUp({
 })
 ```
 
-## Default overlay UI
-
-### persist_default_ui
-
-- *Optional*
-- **Type:** *`boolean`*
-- Default: `false`
-
-Whether to hide the overlay default UI after file(s) has been added to CustUp
-
-### _custupDefaultUploadSentence
-
-- *Optional*
-- **Type:** *`string | HTMLElement`*
-- Default: `"Drag files to upload or Click to select file from device"`
-
-Don't mind the name it is just the hint text that displays on the default UI overlay, and it can be set to anything between a `string` or an `HTMLElement`.
-
-### file_source_icons
-
-- *Optional*
-- **Type:** *`Object` of [File source icons](/docs/types/file-source-icons)*
-- Default: All sources
-
-This option is for customizing the file source icon HTML elements, that is, if you would like to change the way the file source icons look on the UI by setting another HTML element in place of any file source.
-
-#### Example
-
-```js
-const instance1 = new CustUp({
-    file_source_icons: {
-        record_screen: `<div>I am a custom source record screen icon</div>`
-    }
-})
-```
-
-To further customize it better you may have to use style override to add or override the current file source icons container style
-
-### show_preview_file_btn
+### show_ui_tools_on_mobile_devices
 
 ::::tip Note
 This option only applies to the default UI type
@@ -280,51 +242,7 @@ This option only applies to the default UI type
 - **Type:** *`boolean`*
 - Default: `true`
 
-Whether to show the file preview button, this is the button that launches the preview popup for the file, currently only image, video and audio files can be previewed.
-
-### show_file_remove_btn
-
-::::tip Note
-This option only applies to the default UI type
-::::
-
-- *Optional*
-- **Type:** *`boolean`*
-- Default: `true`
-
-Whether to show file remove button or not.
-
-### show_file_details_container
-
-::::tip Note
-This option only applies to the default UI type
-::::
-
-- *Optional*
-- **Type:** *`boolean`*
-- Default: `true`
-
-Whether to show the container that displays file name, file size and file preview button below the file display element.
-
-### allowed_sources
-
-::::tip Note
-This option only applies to the default UI type
-::::
-
-- *Optional*
-- **Type:** *`Array` of [Allowed sources](/docs/types/allowed-sources)*
-- Default: All sources
-
-For choosing which file sources you want to allow on the UI and their order, the file sources will be listed on the UI according to their order in the `allowed_sources` array.
-
-#### Example
-
-```js
-const instance1 = new CustUp({
-    allowed_sources: ['record_video', 'record_screen', 'dropbox_source']
-})
-```
+For specifying if the header container should be filled with tools on mobile devices or not. It is useful if you want to use the header container for a different thing, set it to `false` in that case.
 
 ## Font
 
@@ -351,100 +269,6 @@ If you want to use the name of the Font that has already been loaded in your pro
 - Default: `Lato`
 
 If you set the [css_font_link](#css_font_link) option then you must also set this option to the font name of the Google Font link you provided.
-
-## Style override
-
-### external_source_style_override
-
-- *Optional*
-- **Type:** *`Object` of [External sources UI styles](/docs/customization/external-sources)*
-- Default: `{}`
-
-This option is used for adding a class name or overriding the external sources elements' class name.
-
-#### Example
-
-```js
-const instance1 = new CustUp({
-    external_source_style_override: {
-        url_source_container: ['random_class_name', true],
-        // url_source_container: 'random_class_name', // to override the current class name
-    }
-})
-```
-
-### media_capture_source_style_override
-
-- *Optional*
-- **Type:** *`Object` of [Media sources UI styles](/docs/customization/media-sources)*
-- Default: `{}`
-
-This option is used for adding a class name or overriding the media sources elements' class name.
-
-#### Example
-
-```js
-const instance1 = new CustUp({
-    media_capture_source_style_override: {
-        media_capture_main_container: ['random_class_name', true],
-        // media_capture_main_container: 'random_class_name', // to override the current class name
-    }
-})
-```
-
-### default_styles_override
-
-- *Optional*
-- **Type:** *`Object` of [Main UI styles](/docs/customization/main-ui)*
-- Default: `{}`
-
-This option is used for adding a class name or overriding the default/main ui elements' class name.
-
-#### Example
-
-```js
-const instance1 = new CustUp({
-    default_styles_override: {
-        outerContainer: ['random_class_name', true],
-        // outerContainer: 'random_class_name', // to override the current class name
-    }
-})
-```
-
-### persist_styles_override_across_instances
-
-- *Optional*
-- **Type:** *`boolean`*
-- Default: `false`
-
-Sometimes you may want to apply the style that you applied to an instance to other instances too, to achieve that just set `persist_styles_override_across_instances` to `true` then the styles that were set to the instance will also be applied to other instances after the instance.  
-  
-The best way to implement this is to set this option in the instance before other instances that you want the customized style to span.
-
-### default_icons_override
-
-- *Optional*
-- **Type:** *`Object` of [Icons](/docs/types/icons)*
-- Default: All icons
-
-This option is for overriding an icon or adding new icons on the fly, you can provide an HTMLElement or SVG to it.
-
-#### Example
-
-```js
-const instance1 = new CustUp({
-    default_icons_override: {
-        add_file: `<div>File</div>`, // overrides the `add_file` icon
-        new_icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier"> <g id="Interface / Line_L"> 
-                <path id="Vector" d="M12 19V5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
-            </g> </g>
-        </svg>` // adds a vertical line svg icon
-    }
-})
-```
 
 ## File upload
 

@@ -23,8 +23,7 @@ function HomepageHeader() {
         </Heading>
         <div style={{display: 'flex', justifyContent: 'center', marginTop: 40}}>
           <div style={{fontSize: '130%', width: '60%'}}>
-            Stop settling, start customizing. CustUp is the ultimate file upload toolbox, built for 
-            developers who dare to dream. Endless options, zero limitations. Go bold!
+            Stop settling, start customizing. CustUp is the ultimate file upload toolbox with zero dependencies. Endless options, zero limitations.
           </div>
         </div>
         <div style={{marginTop: 10}}>

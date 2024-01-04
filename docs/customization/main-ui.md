@@ -8,6 +8,18 @@ The main UI elements styles are as follows
 
 ## Element styles
 
+The main ui styles or classnames override should be provided to the `default_styles_override` option.
+
+### Example
+
+```js
+const instance1 = new CustUp ({
+    default_styles_override: {
+        outerContainer: ['custom_outer_container_class', true]
+    }
+})
+```
+
 ### outerContainer
 
 The style of CustUp's wrapper container
@@ -147,13 +159,3 @@ The style of the inner container of file display element
 The above Style column holds the key of the class names of all the default UI element styles which can be customized by either overriden or new classes can be added to them to customize them to suit any project's design.  
   
 This styles can be set in the option with the `default_styles_override` option  
-
-### Example
-
-```js
-const instance1 = new CustUp ({
-    default_styles_override: {
-        outerContainer: ['custom_outer_container_class', true]
-    }
-})
-```
