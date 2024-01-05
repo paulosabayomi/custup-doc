@@ -50,7 +50,6 @@
 
 @media only screen and (max-width: 520px) {
     .supportedLangs {
-        height: 45vh;
         min-height: 45vh;
     }
     .langlistCont img {
