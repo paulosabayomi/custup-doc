@@ -6,7 +6,6 @@
     align-items: center;
     flex-wrap: wrap;
     flex-shrink: 1;
-    height: 60vh;
     min-height: 60vh;
 }
 
@@ -22,6 +21,7 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 15px;
 }
 
 .langlistCont img {
@@ -40,6 +40,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .langLink div {
