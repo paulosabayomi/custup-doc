@@ -292,7 +292,7 @@ const instance1 = new CustUp({
         },
         axios_settings: {
             headers: {
-                'Authorization': 'Bearer abcdefghijkl'
+                'Authorization': 'Bearer test_test_abcdefghijkl'
             },
             configs: {}
         }

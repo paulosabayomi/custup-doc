@@ -7,6 +7,13 @@
     flex-wrap: wrap;
     height: 90vh;
     align-items: center;
+    background: url(./../../../static/img/magicpattern-mesh.png) no-repeat;
+    background-size: cover;
+}
+
+[data-theme='dark'] .featuresContainer {
+    background: url(./../../../static/img/magicpattern-mesh-black.png) no-repeat;
+    background-size: cover;
 }
 
 .header {

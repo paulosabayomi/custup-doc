@@ -9,6 +9,13 @@
   position: relative;
   overflow: hidden;
   height: 90vh;
+  background: url(./../../static/img/magicpattern-mesh-light.png) no-repeat;
+  background-size: cover;
+}
+
+[data-theme='dark'] .heroBanner {
+  background: url(./../../static/img/magicpattern-mesh-main.png) no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 996px) {

@@ -5,6 +5,13 @@
     justify-content: center;
     flex-wrap: wrap;
     flex-shrink: 1;
+    background: url(./../../../static/img/magicpattern-grid-light.png) repeat;
+    background-size: 50%;
+}
+
+[data-theme='dark'] .showcaseContainer {
+    background: url(./../../../static/img/magicpattern-grid-dark.png) repeat;
+    background-size: 50%;
 }
 
 .showcaseContainer .showcaseDescription {
