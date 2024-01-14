@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './styles.module.css';
 import clsx from "clsx";
-import CustUp from "custup/src/custup.min";
+import CustUp from "custup";
 import Link from "@docusaurus/Link";
 
 const HomePageShowcase = React.memo(() => {

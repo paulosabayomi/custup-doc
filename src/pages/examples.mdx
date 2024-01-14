@@ -5,7 +5,7 @@ title: Job Application page Example
 # Job application page Example
 
 import React from 'react';
-import CustUp from 'custup/src/custup.min';
+import CustUp from 'custup';
 
 This example is just a demonstration of how there can be many CustUp instances on a single page.
 
@@ -227,6 +227,14 @@ The Code
 The javascript  
 
 ```js title="index.js"
+import CustUp from 'https://unpkg.com/custup@latest/src/custup.min.js'
+
+// OR if installed via npm
+// import CustUp from '/path/to/custup/src/custup.min.js'
+
+// TypeScript
+// import CustUp from '/path/to/custup/'
+
 const inst1 = new CustUp({
     targetRootElement: "#container-1",
     ui_type: "resumeUploaderUI",

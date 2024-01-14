@@ -8,6 +8,8 @@ It is very easy to integrate CustUp in your web and mobile application
 
 ## Installed via NPM
 
+### Vanilla JavaScript
+
 CustUp should be imported like so
 
 ```js
@@ -15,6 +17,16 @@ import CustUp from "/path/to/custup/src/custup.min.js"
 
 // OR the unminified version
 // import CustUp from "/path/to/custup/src/custup.js"
+
+const instance1 = new CustUp({
+    targetRootElement: "#container"
+})
+```
+
+### TypeScript
+
+```js
+import CustUp from "/path/to/custup"
 
 const instance1 = new CustUp({
     targetRootElement: "#container"
@@ -48,13 +60,15 @@ Then add the CSS file to the header
 
 and that's all you need to get CustUp running, the only required option is the `targetRootElement` which is a CSS selector of the HTML element in which CustUp will be created into.
 
-## UNPKG CDN option
+## CDN option
+
+### UNPKG
 
 ```js
 import CustUp from 'https://unpkg.com/custup@latest/src/custup.min.js' 
 
 // OR unminified version
-import CustUp from 'https://unpkg.com/custup@latest/src/custup.js' 
+// import CustUp from 'https://unpkg.com/custup@latest/src/custup.js' 
 
 const instance1 = new CustUp({
     targetRootElement: "#container"
@@ -76,6 +90,45 @@ You can include the CSS files from UNPKG like
 <link rel="stylesheet" href="https://unpkg.com/custup@latest/src/detached.min.css">
 <!-- ResumeUploader UI CSS file -->
 <link rel="stylesheet" href="https://unpkg.com/custup@latest/src/resumeUploaderUI.min.css">
+```
+
+### jsdelivr
+
+```js
+import CustUp from 'https://cdn.jsdelivr.net/npm/custup@latest/src/custup.min.js' 
+
+// OR unminified version
+// import CustUp from 'https://cdn.jsdelivr.net/npm/custup@latest/src/custup.js' 
+
+const instance1 = new CustUp({
+    targetRootElement: "#container"
+})
+```
+
+You can include the CSS files like
+
+```html
+<!--All the CSS files combined together -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/all.min.css">
+
+<!-- OR individual CSS files -->
+<!-- Bare UI CSS file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/bare.min.css">
+<!-- CustUp default UI CSS file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/custup.min.css">
+<!-- Detached UI CSS file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/detached.min.css">
+<!-- ResumeUploader UI CSS file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/resumeUploaderUI.min.css">
+```
+  
+### TypeScript Error
+
+If you are importing from CDN in TypeScript and you got the `Cannot find module '...' or its corresponding type declarations.` error, add `// @ts-ignore` at the top of the import statement like so
+
+```ts
+// @ts-ignore
+import CustUp from 'https://cdn.jsdelivr.net/npm/custup@latest/src/custup.min.js' 
 ```
 
 ## Using with React JS

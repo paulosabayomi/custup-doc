@@ -20,7 +20,7 @@ Import CustUp like so
 
 ```jsx
 import React from 'react';
-import CustUp from "custup/src/custup.min";
+import CustUp from "custup";
 ```
 
 Then import CustUp CSS files, the `all.min.css` is recommended as it includes all the CSS files of all the different UI types.  
@@ -75,7 +75,7 @@ import 'custup/src/all.min.css';
 
 ```jsx title="ExampleComponent.jsx"
 import React from 'react';
-import CustUp from "custup/src/custup.min";
+import CustUp from "custup";
 
 const ExampleComponent = React.memo(({}) => {
     const [instance1, setInstance1] = React.useState({});
