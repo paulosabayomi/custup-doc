@@ -4,6 +4,10 @@ sidebar_position: 2
 
 # Installation
 
+::::info
+CustUp supports TypeScript out of the box which is useful for type hinting and editor auto-complete among other cool things.
+::::
+
 Install via npm
 
 ```bash

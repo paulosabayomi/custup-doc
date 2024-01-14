@@ -24,6 +24,10 @@ const SupportedLangs = React.memo(() => {
                     <img src={require('./../../../static/img/cordova.png').default} />
                     <div>Apache Cordova</div>
                 </a>
+                <a href="https://www.typescriptlang.org/" className={styles.langLink}>
+                    <img src={require('./../../../static/img/typescript.png').default} />
+                    <div>TypeScript</div>
+                </a>
             </div>
         </div>
     )
