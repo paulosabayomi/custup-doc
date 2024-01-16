@@ -116,7 +116,9 @@ To add a class name to an element's list of class names
 
 ```js
 const instance1 = new CustUp({
-  defaultUI: ['new_class_name_for_the_default_ui_container', true]
+  default_styles_override: {
+    defaultUI: ['new_class_name_for_the_default_ui_container', true]
+  }
 })
 ```
 
@@ -124,7 +126,9 @@ To override the class names of an element
 
 ```js
 const instance1 = new CustUp({
-  defaultUI: ['new_class_name_for_the_default_ui_container', false]
+  default_styles_override: {
+    defaultUI: ['new_class_name_for_the_default_ui_container', false]
+  }
 })
 ```
 
@@ -132,7 +136,9 @@ Or use a `string`
 
 ```js
 const instance1 = new CustUp({
-  defaultUI: "new_class_name_for_the_default_ui_container"
+  default_styles_override: {
+    defaultUI: "new_class_name_for_the_default_ui_container"
+  }
 })
 ```
 

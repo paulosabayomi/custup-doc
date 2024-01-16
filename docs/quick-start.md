@@ -124,6 +124,10 @@ You can include the CSS files like
   
 ### TypeScript Error
 
+::::warning
+This issue has been fixed because type declarations has been added to CustUp
+::::
+
 If you are importing from CDN in TypeScript and you got the `Cannot find module '...' or its corresponding type declarations.` error, add `// @ts-ignore` at the top of the import statement like so
 
 ```ts
@@ -131,6 +135,6 @@ If you are importing from CDN in TypeScript and you got the `Cannot find module 
 import CustUp from 'https://cdn.jsdelivr.net/npm/custup@latest/src/custup.min.js' 
 ```
 
-## Using with React JS
+## Using with Frameworks
 
-CustUp can also work in React JS applications, check out the guide on how to [install and use CustUp in your React JS application here](/docs/guides/react-integration).
+CustUp currently supports React JS, check out the guide on how to [install and use CustUp in your React JS application here](/docs/frameworks/react-js).
