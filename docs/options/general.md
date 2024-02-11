@@ -320,12 +320,36 @@ This option is for specifying whether all the files should be uploaded at once o
   
 **Use Case:** When there is a need to upload all files together with the form field when the form submit button is clicked.
 
+### should_chunk
+
+- *Optional*
+- **Type:** *`boolean`*
+- Default: `false`
+
+This option is for specifying if the files should be uploaded in chunks, default is `false`, it is useful in the case of large file upload which is above the server limit, this option is completely ignored if `single_upload` option is set to true because chunk upload is not available for combined file upload, the default chunk size for each files is `1024 * 1024` and you can adjust it to your need with the `chunk_size` option.  
+
+### chunk_size
+
+- *Optional*
+- **Type:** *`number`*
+- Default: `1024 * 1024`
+
+This option is for specifying the chunk upload size, if `should_chunk` option was set to `true`, if `single_upload` option is set to `true` this option is completely ignored because chunk upload is currently not available for combined or single upload, it is only available for serial upload.  
+
+### show_upload_progress_bar
+
+- *Optional*
+- **Type:** *`boolean`*
+- Default: `true`
+
+This option when set to `false` will hide the progress bar that is displayed on the default UI file display element when files are being uploaded to the server.  
+
 ## Default files
 
 ### default_files
 
 - *Optional*
-- **Type:** *`Array` of `{file: string \| File \| Blob; isUploadable: boolean; headers: {}}`*
+- **Type:** *`Array` of `{file: string | File | Blob; isUploadable: boolean; headers: {}}`*
 - Default: `false`
 
 This option is for providing files that should be added automatically after initialization, the file format can be a `URL` or base64 `string`, `File` or `Blob` format, and you can also set if the file should be uploadable or not, if you provide an endpoint that returns a `Blob` and that for instance requires an `Authorization` header you can provide it in the headers option in the object
@@ -436,3 +460,20 @@ const instance1 = new CustUp({
     persist_type: 'hard'
 })
 ```
+
+## Notification
+
+### messages
+
+- *Optional*
+- **Type:** *`Object`*
+
+This option is for configuring notification options like message timeout.
+
+### timeout
+
+- *Optional*
+- **Type:** *`number`*
+- Default: `4000`
+
+This option is for specifying the timeout for hiding messages, note this option is ignored for async messages, the default is 4000ms or 4 seconds.

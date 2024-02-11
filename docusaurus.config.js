@@ -143,7 +143,7 @@ const config = {
           //   ],
           // },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CustUp. Built with &#9829; by <a href="https://github.com/paulosabayomi">Abayomi Amusa (Paulos Ab)</a>.`,
+        copyright: `Copyright © ${new Date().getFullYear()} CustUp. Built with &#9829; by <a href="https://pryxy.com/about-me">Abayomi Amusa (Paulos Ab)</a>.`,
       },
       prism: {
         theme: prismThemes.github,

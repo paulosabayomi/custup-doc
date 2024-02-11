@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Methods
@@ -111,6 +111,24 @@ This method returns all the files that were successfuly uploaded.
 
 This method is for programmatically opening the UI for adding new files which is also called default UI overlay
 
+### hide_add_file_ui
+
+- Params:  
+    None
+- returns  
+    `void`
+
+This method is for programmatically hiding the UI for adding new files which is also called default UI overlay.
+
+### is_add_file_ui_shown
+
+- Params:  
+    None
+- returns  
+    `boolean`
+
+This method is for checking if the add file UI or the default UI has been hidden or shown.
+
 ### preview_file
 
 - Params:  
@@ -146,6 +164,15 @@ instance1.preview_file(file_id)
     `Array<File>`
 
 This method returns all selected files excluding the default files, that is, excluding the files that were passed to CustUp and that were loaded immediately after initialization.
+
+### get_default_files
+
+- Params:  
+    None
+- returns  
+    `Array<File>`
+
+This method returns all the default files i.e all the files that were passed to CustUp through the `default_files` option and that were loaded immediately after initialization.
 
 ### get_all_files
 
@@ -208,6 +235,7 @@ instance1.remove_file(file_id, () => make_random_api_call(file_id));
 - Params:  
     `file: File | Blob | Array<File | Blob>` - Required  
     `skip_file_check: boolean` - Optional
+    `index: null` - Optional
 - returns  
     `void`
 
@@ -222,6 +250,8 @@ const instance1 = new CustUp({
 
 const file = new File(...); // for example
 
+instance1.add_file(file, false, 3); // it will be added in the third position and shift the former 3rd to the fourth position
+
 instance1.add_file(file, skip_file_check);
 
 instance1.add_file([file1, file2, file3]);
@@ -233,6 +263,34 @@ instance1.add_file([file1, file2, file3]);
 | ---- | ---- | ---- |
 `file` | `File \| Blob \| Array<File \| Blob>` | This can be of type `Blob` or `File` or `array` of files
 `skip_file_check` | `boolean` | If this is `true` constraint checks will be skipped on the file or files
+`index` | `number` | Specify this if you want to add the new file to a particular position in the file list and on the UI, if the provided file is an array all the files in the array will be added from the specified position both in the file storage in the memory and on the UI.
+
+### clear_persisted_files
+
+- Params:  
+    None
+- returns  
+    `void`
+
+This method is for programatically clearing the persisted files from the browser storage.
+
+### select_file_from_device
+
+- Params:  
+    None
+- returns  
+    `void`
+
+This method is for programatically launching the user's device file picker to choose files.
+
+### is_file_previewable
+
+- Params:  
+    `File`
+- returns  
+    `boolean`
+
+This method is for checking if the provided file is among the CustUp supported file types for preview.
 
 ## File sources
 
@@ -307,3 +365,95 @@ This method launches the Box file source UI to add file from Box.
     `void`
 
 This method launches the DALL.E file source UI to generate files with OpenAI DALL.E v3.
+
+### get_file_sources
+
+- Params:  
+    `{iconsContainer: HTMLElement | null, allElOnClick: Function | null, additionalElOnClickEv: Object}`
+- returns  
+    `Array<HTMLDivElement>`
+
+This method is for getting all the allowed file sources, if none is specified in the option all the file sources will be returned.
+
+
+#### Params description
+
+| Param | Type | Default | Description |
+| ---- | ---- | ---- | ---- |
+`iconsContainer` | `HTMLElement \| null` | `null` | The HTML element in which the file source HTML elements will be appended to automatically when passed to the method
+`allElOnClick` | `Function \| null` | `null` |  This is to pass a function that will be added to `onClick` event of all the file source elements
+`additionalElOnClickEv` | `Object` | `{}` | This is to pass specific additional `onClick` event to a specific file source element, example below.
+
+#### Example
+
+```js
+const instance1 = new CustUp({});
+
+// Example 1
+const custum_file_sources_el_container = document.querySelector('.random_container');
+const additionalOnClickEv = (e) => alert(e);
+instance1.get_file_sources(custum_file_sources_el_container, additionalOnClickEv); // it returns an array of file source DIV elements
+
+// Example 2
+const spec_callback_fns = {
+    link_source: (e) => alert("Hey!, I am the link source"),
+    record_screen: (e) => alert("Hey!, I am about to record the screen!!")
+}
+
+const all_file_sources = instance1.get_file_sources(null, null, spec_callback_fns); // it returns an array of file source DIV elements
+
+all_file_sources.forEach(el => {
+    /* Do something with each elements */
+    custum_file_sources_el_container.append(el);
+})
+```
+
+### close_file_source_popup
+
+- Params:  
+    `None`
+- returns  
+    `void`
+
+This method is for programatically closing the file source overlay UI popup.
+
+### close_file_source_popup
+
+- Params:  
+    `None`
+- returns  
+    `void`
+
+This method is for programatically closing the file source overlay UI popup.
+
+## Notification
+
+### display_message
+
+- Params:  
+    `{msg: string; type: "error" | "success" | "info"; async: boolean; timeout: number}`
+- returns  
+    `Function | void`
+
+This method is used for displaying messages programatically and dynamically on the CustUp UI.
+
+#### Params description
+
+| Param | Type | Default | Description |
+| ---- | ---- | ---- | ---- |
+`msg` | `string` | `<empty string>` | The message that should be displayed
+`type` | `"error" \| "success" \| "info"` | `undefined` |  The type of the message that will be displayed
+`async` | `boolean` | `false` | Whether the message is asynchronous or not, asynchronous messages are for displaying messages for async requests and Promises, if set to `true` an infinite round loading indicator will be displayed in the shown message and the shown message will not hide until the returned hide function has been expicitly called by after the Promise has been resolved, see example below.
+`timeout` | `number` | The `timeout` option which is 4000ms or 4s by default | The timeout for the message, it doesn't have any effect if the notification is async.
+
+#### Example
+
+```js
+const instance1 = new CustUp({});
+
+const request_notification = instance1.display_message("Fetching files from the server", "info", true);
+
+await some_async_requests();
+
+request_notification(); // after gets called here the async message will hide or be removed from the DOM (with animation) immediately, if not called the async message will not be hidden
+```

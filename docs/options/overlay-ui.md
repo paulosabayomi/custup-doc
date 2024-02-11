@@ -97,3 +97,11 @@ const instance1 = new CustUp({
     allowed_sources: ['record_video', 'record_screen', 'dropbox_source']
 })
 ```
+
+## display_file_sources
+
+- *Optional*
+- **Type:** *`boolean`*
+- Default: `true`
+
+If set to `false` the file sources will not be listed on the default UI.

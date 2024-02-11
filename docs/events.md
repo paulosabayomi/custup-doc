@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 # Events
@@ -307,7 +307,9 @@ This event is triggered before file upload starts.
 - returns  
     `{progressEvent: ProgressEvent; all_files: Array<File> | undefined; file: File | undefined; upload_element: HTMLElement | undefined}`
 
-This event is triggered during upload and it returns the progress event and upload progress data.
+This event is triggered during upload and it returns the progress event and upload progress data.  
+  
+For `single_upload` upload progress is only broadcasted through the `upload_progress` event and not indicated on the UI, so if you want to display the upload progress you have to subscribe to the `upload_progress` event.
 
 #### Properties descriptions
 
@@ -354,6 +356,36 @@ This event is triggered when a file or all files could not be uploaded due to an
 ### upload.retry
 
 - returns  
-    `{file: File, file_container: HTMLElement}`
+    `{file: File; file_container: HTMLElement}`
 
 This event is triggered before retrying to upload a file.
+
+### upload.all_finished
+
+- returns  
+    `{not_uploaded_files: Array<File>; uploaded_files: Array<File>}`
+
+This event is triggered after all the files has been uploaded to the server.
+
+## Others
+
+### file_source.closed
+
+- returns  
+    `void`
+
+This event is triggered when the file source (i.e the overlay that displays file sources like Video Camera, Link source, Google Drive and others) popup is closed.
+
+### default_ui.shown
+
+- returns  
+    `void`
+
+This event is triggered when the default UI overlay (i.e the initial UI that get displayed when no files has been added to the UI) is shown.
+
+### default_ui.closed
+
+- returns  
+    `void`
+
+This event is triggered when the default UI overlay (i.e the initial UI that get displayed when no files has been added to the UI) has been closed.

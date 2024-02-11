@@ -1,22 +1,22 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
-# Detached
+# Elegant
 
 import React from 'react';
 import CustUp from 'custup/src/custup.min.js';
 
-Detached UI type is the type that has the default UI and file display separately on the UI.
+Elegant UI type is a beautiful and fully responsive UI type.
 
-export const DetachedUI = ({}) => {
+export const ElegantUI = ({}) => {
     React.useEffect(() => {
         const instance1 = new CustUp({
             targetRootElement: "#container-1",
             default_styles_override: {
                 outerContainer: ["custup_outer_contaner", true],
             },
-            ui_type: 'detached',
+            ui_type: 'elegant',
             file_upload: {
                 endpoint_url: 'https://api.pryxy.com/fileupload',
                 files_field_name: 'profileImage',
@@ -28,7 +28,7 @@ export const DetachedUI = ({}) => {
 
 <div id="container-1" style={{marginBottom: 15}}></div>
 
-<DetachedUI />  
+<ElegantUI />  
   
 ```js title="index.js"
 const instance1 = new CustUp({
@@ -37,7 +37,7 @@ const instance1 = new CustUp({
                 outerContainer: ["custup_outer_contaner", true],
             },
             // ...
-            ui_type: 'detached'
+            ui_type: 'elegant'
             // ...
 
         })

@@ -7,6 +7,7 @@ const Features = React.memo(() => {
         <div className={styles.featuresContainer}>
             <div className={styles.header}>Features</div>
             <div className={styles.featuresList}>
+                <div>Chunk Upload</div> 
                 <div>Choose the UI that fits your project</div> 
                 <div>Customize the UI to fit your project</div> 
                 <div>Easily build your own UI</div> 
