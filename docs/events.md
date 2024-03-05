@@ -6,9 +6,28 @@ sidebar_position: 11
 
 CustUp has events that for file and media activities.  
   
-CustUp events can be subscribed to by calling the `on` method and passing the event category followed by `.` and the event name and also the callback function as the second argument.  
+CustUp events can be subscribed to by calling the `addEventListener` or by calling the `on` method on the CustUp instance and passing the event category followed by `.` and the event name and also the callback function as the second argument.  
   
-**Example**
+## Examples
+
+### Using addEventListener
+
+```js
+const instance1 = new CustUp({
+    // ...
+})
+
+// To subscribe to an event
+// instance1.addEventListener('event-category.event-name', callback_fn)
+
+const callback_fn = () => {
+    console.log('CustUp has been initialized')
+};
+
+instance1.addEventListener('library.init', callback_fn);
+```
+
+### Using the `on` method
 
 ```js
 const instance1 = new CustUp({
@@ -21,16 +40,39 @@ const instance1 = new CustUp({
 const callback_fn = () => {
     console.log('CustUp has been initialized')
 };
+
 instance1.on('library.init', callback_fn);
+```
+
+### Getting event data
+
+CustUp extends the `EventTarget` class so most of CustUp's properties can be accessed from the event argument that's passed to the event listener's callback function, example of calling a method in the callback function of the `library.init` event
+
+```js
+instance1.on('library.init', (e) => {
+  e.target.launch_url_source()
+});
+```
+
+And the data returned by the event can be accessed from the `event.detail` for example
+
+```js
+instance1.on('file.afterAdded', (e) => {
+  console.log(e.detail);
+})
 ```
 
 ## Library Events
 
-Currently there's only one event that triggers for the library activities and it is the initialization event.
+Library events are events that are dispatched for loibrary activities
 
 ### library.init
 
-This event is called when the library has finished initialization and has been painted on the UI.
+This event is triggered when the library has finished initialization and has been painted on the UI.
+
+### library.beforeInit
+
+This event is triggered just before the library get initialized, it is useful for setting options that needs to be set before the library is initialized.
 
 ## File Events
 
@@ -48,8 +90,8 @@ const instance1 = new CustUp({
   // ...
 });
 
-instance1.on('file.beforeAdded', ({file}) => {
-  console.log(file)
+instance1.addEventListener('file.beforeAdded', (e) => {
+  console.log(e.detail.file)
   // do something with the returned file before it gets added to the memory and UI
 })
 ```
@@ -68,8 +110,8 @@ const instance1 = new CustUp({
   // ...
 })
 
-instance1.on('file.afterAdded', ({file, element, count}) => {
-  console.log(file, element, count)
+instance1.addEventListener('file.afterAdded', (e) => {
+  console.log(e.detail.file, e.detail.element, e.detail.count)
 })
 ```
 
@@ -86,9 +128,9 @@ instance1.on('file.afterAdded', ({file, element, count}) => {
 - returns  
   `File`
 
-This event should be used to add checks for files before being added and before the `file.beforeAdded` event gets triggered.  
+This event should be listened for to add checks for files before being added and before the `file.beforeAdded` event gets triggered.  
   
-**Note:** The callback function of this event should either returns `true` or `false` or returns an `array` in which the first item should be `true` or `false`, `true` if the check passed and `false` if it does not, if it returns void the checks will not be effective, the second item in the `array` should be the error message that should be displayed to the user.
+**Note:** The callback function of this event should call the `preventDefault` when the checks for the file fails, see example below
 
 #### Example
 
@@ -97,11 +139,9 @@ const instance1 = new CustUp({
   // ...
 })
 
-instance1.on('file.beforePassedChecks', (file) => {
-  if (file.name.includes('test')) {
-    return [false, "files that have 'test' in their file name are not allowed"];
-  }else{
-    return [true]; // or can also return void
+instance1.addEventListener('file.beforePassedChecks', (e) => {
+  if (/*file fails test*/) {
+    e.preventDefault();
   }
 })
 ```
@@ -120,8 +160,8 @@ const instance1 = new CustUp({
   // ...
 })
 
-instance1.on('file.removed', ({file, files_count}) => {
-  console.log(file, files_count)
+instance1.addEventListener('file.removed', (e) => {
+  console.log(e.detail.file, e.detail.files_count)
   // do something like make an API Delete request to remove the file from the server and the database
 })
 ```
@@ -290,15 +330,27 @@ This event is triggered when screen recording is cancelled.
 ### upload.beforeStart
 
 - returns  
-    `{files: Array<File>, formData: FormData, form: HTMLFormElement | undefined}`
+    `{files: Array<File>, formData: FormData, form: HTMLFormElement | undefined}`  
+    OR  
+    `{file: File, upload_element: HTMLElement}` - in the case of a single file upload
 
-This event is triggered before file upload starts.
+This event is triggered before file upload starts and it can also be used to perform checks on the files or a single file (in the case of serial upload) before upload starts, the callback function should call `preventDefault` to prevent file upload when the upload requirements has not been satisfied.
+
+#### Example
+
+```js
+instance1.addEventListener('upload.beforeStart', (e) => {
+  if (/* upload requirements not satisfied */) {
+    e.preventDefault();
+  }
+})
+```
 
 #### Returned properties description
 
 | Property | Type | Description |
 | ---- | ---- | ---- |
-`files` | `Array<File>` | Array of all the files that will be uploaded
+`files` | `Array<File> \| File` | Single file or array of all the files that will be uploaded
 `formData` | `FormData` | The `FormData` containing the data that will be uploaded to the endpoint
 `form` | `HTMLFormElement \| undefined` | The provided form element, it is `undefined` if no form element was provided
 

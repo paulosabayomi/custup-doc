@@ -64,7 +64,6 @@ const HomePageShowcase = React.memo(() => {
         })
         const _inst4 = new CustUp({
             targetRootElement: "#container-4",
-            ui_type: "elegant",
             allowed_sources: ['openai_dalle_source'],
             _custupDefaultUploadSentence: "Click the OpenAI logo below to generate images with Dalle-3, or Drag files to upload or Click to select file from device",
             default_styles_override: {
@@ -84,6 +83,7 @@ const HomePageShowcase = React.memo(() => {
               outerContainer: ['custup_outer_contaner', true],
             },
             allowed_tools: null,
+            position_container: {"afterEl": "#elegant-title"},
             default_files: [
                 {file: "https://random.imagecdn.app/1000/800", isUploadable: true},
                 {file: "https://random.imagecdn.app/1000/800", isUploadable: true},
@@ -114,6 +114,9 @@ const HomePageShowcase = React.memo(() => {
                 </div>
             </div>
             <div className={styles.custupContainer1} id="container-5">
+                <div id="elegant-title" style={{width: "100%", textAlign: 'center', marginTop: 20, marginBottom: 5, fontSize: '130%', fontWeight: 'bold'}}>
+                    Or Elegant UI type
+                </div>
             </div>
             <div className={styles.custupContainer1} id="container-3">
                 <div style={{width: "100%", textAlign: 'center', marginTop: 20, marginBottom: 20, fontSize: '130%', fontWeight: 'bold'}}>

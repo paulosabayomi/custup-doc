@@ -14,6 +14,7 @@ This are the current UI types that you can choose from.
   
 - [Default UI](./default-ui)
 - [Bare UI](./bare-ui)
+- [Elegant UI](./elegant-ui)
 - [Detached UI](./detached-ui)
 - [Profile picture](./profile-picture-ui)
 - [Resume Uploader](./resume-uploader-ui)

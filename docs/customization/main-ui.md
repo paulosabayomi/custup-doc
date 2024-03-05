@@ -58,8 +58,8 @@ The style of the custom scroll bar
 
 ### defaultUI
 
-The style of the default UI wrapper, the default UI is the UI that displays the file source 
-icons
+The style of the default UI wrapper, the default UI is the UI that displays the file source icons
+
 ### defaultUIInnerContentEl
 
 The style of the default UI inner content main container
@@ -71,10 +71,6 @@ The style of the upload description element that hints users on how to add new f
 ### defaultUIUploadIconsContainer
 
 The style of the file select sources
-
-### UITool
-
-The style of the tools
 
 ### fileDisplayUI
 
@@ -110,8 +106,8 @@ The style  _custup_file_detail_bottom_details_container
 
 ### fileUIBottomToolsContainer
 
-The style of the bottom layer in the `fileDetailsContainer` that holds the file size and file 
-preview icon in the default UI
+The style of the bottom layer in the `fileDetailsContainer` that holds the file size and file preview icon in the default UI
+
 ### remove_file_btn
 
 The style of the remove file button
@@ -130,8 +126,8 @@ The style of the upload progress element container
 
 ### file_upload_progress_inner
 
-The style of the upload progress inner container that hold the upload progress element and 
-other items
+The style of the upload progress inner container that hold the upload progress element and other items
+
 ### file_upload_progress
 
 The style of the upload progress main element

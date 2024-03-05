@@ -6,6 +6,28 @@ sidebar_position: 9
 
 This page consists of all the CustUp methods for interacting with CustUp instances.
 
+## Event method
+
+### on
+
+- Params:  
+    `eventName: string` - required  
+    `callbackFn: Function` - required  
+- returns  
+    `void`
+
+This method can be used to subscribe to CustUp events, it serves as an alternative to `addEventListener`.
+
+#### Example
+
+```js
+const instance1 = new CustUp({...});
+
+instance1.on('file.beforeAdded', (e) => {
+    console.log(e.detail)
+});
+```
+
 ## File Upload
 
 ### upload
@@ -234,7 +256,7 @@ instance1.remove_file(file_id, () => make_random_api_call(file_id));
 
 - Params:  
     `file: File | Blob | Array<File | Blob>` - Required  
-    `skip_file_check: boolean` - Optional
+    `skip_file_check: boolean` - Optional  
     `index: null` - Optional
 - returns  
     `void`
@@ -252,7 +274,7 @@ const file = new File(...); // for example
 
 instance1.add_file(file, false, 3); // it will be added in the third position and shift the former 3rd to the fourth position
 
-instance1.add_file(file, skip_file_check);
+instance1.add_file(file, true);
 
 instance1.add_file([file1, file2, file3]);
 ```
@@ -291,6 +313,26 @@ This method is for programatically launching the user's device file picker to ch
     `boolean`
 
 This method is for checking if the provided file is among the CustUp supported file types for preview.
+
+## Options
+
+### setOptions
+
+- Params:  
+    `Object` - The options to set  
+- returns  
+    `void`
+
+This method is for setting options dynamically, options set with this method will be overriden.
+
+```js
+const instance1 = new CustUp({...});
+
+instance1.setOptions({
+    allowed_file_types: ['mp3', "mp4", "jpg", "png", "jpeg", "webp", "gif", "javascript"],
+    file_preview_animation_types: ['slideInLeft'],
+})
+```
 
 ## File sources
 
@@ -407,15 +449,6 @@ all_file_sources.forEach(el => {
     custum_file_sources_el_container.append(el);
 })
 ```
-
-### close_file_source_popup
-
-- Params:  
-    `None`
-- returns  
-    `void`
-
-This method is for programatically closing the file source overlay UI popup.
 
 ### close_file_source_popup
 

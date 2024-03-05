@@ -92,11 +92,11 @@ export const CInst1 = () => {
         })
         setInstance1(inst3)
 
-        inst3.on("upload.beforeStart", (ev) => {
+        inst3.addEventListener("upload.beforeStart", (ev) => {
             const msgCont = document.querySelector("#message")
             msgCont.innerHTML = "";
-            const fd = ev.formData
-            console.log("event", ev.formData, document.forms['job-form']['state'].value)
+            const fd = ev.detail.formData
+            console.log("event", ev.detail.formData, document.forms['job-form']['state'].value)
             fd.forEach((entry) => console.log(entry))
 
             if(document.forms['job-form']['state'].value == "" || document.forms['job-form']['country'].value == "") {
@@ -274,11 +274,11 @@ const inst3 = new CustUp({
 })
 setInstance1(inst3)
 
-inst3.on("upload.beforeStart", (ev) => {
+inst3.addEventListener("upload.beforeStart", (ev) => {
     const msgCont = document.querySelector("#message")
     msgCont.innerHTML = "";
-    const fd = ev.formData
-    console.log("event", ev.formData, document.forms['job-form']['state'].value)
+    const fd = ev.detail.formData
+    console.log("event", ev.detail.formData, document.forms['job-form']['state'].value)
     fd.forEach((entry) => console.log(entry))
 
     if(document.forms['job-form']['state'].value == "" || document.forms['job-form']['country'].value == "") {

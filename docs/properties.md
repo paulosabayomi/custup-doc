@@ -20,7 +20,7 @@ CustUp main parent HTML Element, it can only be accessed after initialization.
 
 CustUp header container parent Element, it can only be accessed after initialization.
 
-## _custupFooterEl 
+## _custupFooterEl
 
 - Type: `HTMLElement`
 - CSS Class name: `footerContainer`
@@ -83,13 +83,6 @@ File display UI, the container where selected files are displayed and listed.
 
 The default or Custup native close popup button.
 
-## UIToolEl
-
-- Type: `HTMLElement`
-- CSS Class name: `UITool`
-
-UI tools container for the default UI type.
-
 ## numberOfFilesDisplayTool
 
 - Type: `HTMLElement`
@@ -117,13 +110,6 @@ The tool that opens the default UI to add more files, only available for default
 - CSS Class name: none
 
 The tool that calls the method that uploads all selected file to the server, only available for default UI type.
-
-## toolDragger
-
-- Type: `HTMLElement`
-- CSS Class name: none
-
-The tool for dragging the default UI type tool, this property is only available for default UI type.
 
 ## scrollBarEl
 

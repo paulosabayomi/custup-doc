@@ -10,6 +10,12 @@ First of all import CustUp
 import CustUp from "/path/to/custup/src/custup.min.js"
 ```
 
+Add the `all.min.css` CSS file
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/all.min.css">
+```
+
 Basic options
 
 ```js
