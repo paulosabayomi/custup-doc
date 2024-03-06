@@ -17,7 +17,7 @@ To achieve this you will use the `allowed_tools` option which takes an array of 
 ```js
 const options = {
     // ...
-    allowed_tools: ['tools_dragger', 'add_file', 'upload', 'added_files_count', 'clear_files'],
+    allowed_tools: ['add_file', 'upload', 'added_files_count', 'clear_files'],
 }
 
 const uploader = new CustUp(options)

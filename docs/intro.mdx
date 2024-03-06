@@ -2,9 +2,32 @@
 sidebar_position: 1
 ---
 
+import React from 'react';
+import CustUp from 'custup/src/custup.min.js';
+
 # Introduction
 
-CustUp is a highly customizable library with zero dependency, and can be easily adapted to a wide range of applications.
+export const DUI = ({}) => {
+    React.useEffect(() => {
+        const instance1 = new CustUp({
+            targetRootElement: "#container-1x",
+            default_styles_override: {
+                outerContainer: ["custup_outer_contaner", true],
+            },
+            file_upload: {
+                endpoint_url: 'https://api.pryxy.com/fileupload',
+                files_field_name: 'profileImage',
+            }
+        })
+    }, [])
+    return (<></>)
+}
+
+<DUI />
+
+<div id="container-1x" style={{marginBottom: 20, display: 'flex', justifyContent: 'center'}}></div>
+
+CustUp is a open-source highly customizable JavaScript file upload library with zero dependency, and can be easily adapted to a wide range of applications.
 
 ## Brief Overview
 
@@ -13,7 +36,7 @@ CustUp which is the short for Customizable Uploader was made to be >95% customiz
 ### Things you might want to know about CustUp
 
 - You can easily change the UI design or create your own UI just by overriding or adding to the CSS classes of the Elements
-- With the instance attachment feature, you can create multiple CustUp instances and upload all files at once together with form fields and/or additional data
+- With the instance attachment feature, you can connect multiple CustUp instances together and upload all files at once together with form fields and/or additional data
 - You can get all the selected files and upload them manually
 - You don't need to worry about installing HTTP client to manage your upload requests because axios was bundled into CustUp which you can easily configure.
 

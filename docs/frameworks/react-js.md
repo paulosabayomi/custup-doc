@@ -34,14 +34,6 @@ import CustUp from "@custup/react"
 // ...
 ```
 
-Then import the `all.min.css` in your `index.js` or `index.tsx` file
-
-```tsx
-// ...
-import "custup/src/all.min.css";
-// ...
-```
-
 Then add CustUp component to where you want CustUp to be created
 
 ```jsx
@@ -150,7 +142,7 @@ const ExampleComponent = React.memo((props: any) => {
 
 ### Subscribing to Events
 
-You can use `ref` to subscribe to CustUp events
+You can use `ref` to subscribe to CustUp events by calling the `addEventListener` or the `on` method.
 
 ```tsx
 // ExampleComponent.tsx
@@ -182,11 +174,44 @@ const ExampleComponent = React.memo((props: any) => {
 
 ```
 
-### File Upload settings
+Events can also be subscribed to by using the  `on` prop, this is useful for events that get triggered before the `ref` gets updated, the `on` method takes an array of objects which contains the type of the event and the callback function for the event listener, for example
 
 ```tsx
-// ExampleComponent.tsx
 
+import { TCustUp } from "@custup/react";
+
+const ExampleComponent = React.memo((props: any) => {
+    const ref1 = React.useRef<TCustUp | undefined>()
+
+    return (
+        <div>
+            <CustUp 
+                ref={ref1}
+                id="first-example-instance" 
+                on={[
+                    {
+                        type: 'library.init',
+                        callbackFn(e) {
+                            console.log("Library has finished initialization", e);
+                        }
+                    },
+                    {
+                        type: 'file.afterAdded',
+                        callbackFn: (e) => {
+                            console.log("File was added", e.detail)
+                        }
+                    }
+                ]}
+            />
+        </div>
+    )
+})
+
+```
+
+### File Upload settings
+
+```tsx title="ExampleComponent.tsx"
 // ...
 import { TCustUp } from "@custup/react";
 
@@ -199,6 +224,26 @@ const ExampleComponent = React.memo((props: any) => {
             console.log("file was added", e)
         })
 
+        // OR using setOptions
+
+        // ref1.current?.setOptions({
+        //     file_upload_settings={{
+        //         endpoint_url: 'http://localhost/fileupload',
+        //         files_field_name: 'profileImage', // field name of the files
+        //         form_field: '#form', // the id of the form element which will be serialized
+        //         additional_data: { // to pass additional data to the request
+        //             userid: 1234567890,
+        //             username: 'johndoe',
+        //         },
+        //         axios_settings: { // the axios settings
+        //             headers: {
+        //                 'Authorization': 'Bearer test_test_abcdefghijkl'
+        //             },
+        //             configs: {}
+        //         }
+        //     }} 
+        // })
+
     }, [ref1.current])
 
 
@@ -207,7 +252,7 @@ const ExampleComponent = React.memo((props: any) => {
             <CustUp 
                 ref={ref1}
                 id="first-example-instance"
-                file_upload={{
+                file_upload_settings={{
                     endpoint_url: 'http://localhost/fileupload',
                     files_field_name: 'profileImage', // field name of the files
                     form_field: '#form', // the id of the form element which will be serialized
@@ -229,4 +274,4 @@ const ExampleComponent = React.memo((props: any) => {
 
 ```
 
-All CustUp options can be passed as props to the CustUp component, all [CustUp options/props can be see here](https://custup.pryxy.com/docs/category/options).
+All CustUp options can be passed as props to the CustUp component, all [CustUp options can be seen here](https://custup.pryxy.com/docs/category/options).

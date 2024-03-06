@@ -75,8 +75,7 @@ The style of the bottom buttons container
 
 ### accept_files_btn
 
-The style of accept file button
-
+The style of accept file button for accepting generated files
 
 ### Setting a custom class name for External source styles
 

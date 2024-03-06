@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # React JS integration
 
-::::warning
+::::note
 React JS version of CustUp is now available and the complete setup guide can be found [in the frameworks section.](/docs/frameworks/react-js)
 ::::
 

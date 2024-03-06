@@ -17,7 +17,6 @@ export const CustUpUI = ({}) => {
   React.useEffect(() => {
     const instance = new CustUp({
       targetRootElement: "#container",
-      allowed_sources: null,
       default_styles_override: {
         outerContainer: ['custup_outer_contaner', true],
         innerContainer: ['inner_container_el', true],
@@ -29,7 +28,7 @@ export const CustUpUI = ({}) => {
         defaultUI: '',
         fileUIOuterContainer: ['file_ui_outer', true]
       },
-      allowed_tools: null
+      display_ui_tools: false
     })
   }, [])
   return (

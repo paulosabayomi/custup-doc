@@ -50,6 +50,8 @@ Then add the CSS file to the header
 <!-- OR individual CSS files -->
 <!-- Bare UI CSS file -->
 <link rel="stylesheet" href="path/to/custup/src/bare.min.css">
+<!-- Elegant UI CSS file -->
+<link rel="stylesheet" href="path/to/custup/src/elegant.min.css">
 <!-- CustUp default UI CSS file -->
 <link rel="stylesheet" href="path/to/custup/src/custup.min.css">
 <!-- Detached UI CSS file -->
@@ -84,6 +86,8 @@ You can include the CSS files from UNPKG like
 <!-- OR individual CSS files -->
 <!-- Bare UI CSS file -->
 <link rel="stylesheet" href="https://unpkg.com/custup@latest/src/bare.min.css">
+<!-- Elegant UI CSS file -->
+<link rel="stylesheet" href="https://unpkg.com/custup@latest/src/elegant.min.css">
 <!-- CustUp default UI CSS file -->
 <link rel="stylesheet" href="https://unpkg.com/custup@latest/src/custup.min.css">
 <!-- Detached UI CSS file -->
@@ -114,6 +118,8 @@ You can include the CSS files like
 <!-- OR individual CSS files -->
 <!-- Bare UI CSS file -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/bare.min.css">
+<!-- Elegant UI CSS file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/elegant.min.css">
 <!-- CustUp default UI CSS file -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/custup@latest/src/custup.min.css">
 <!-- Detached UI CSS file -->
@@ -124,7 +130,7 @@ You can include the CSS files like
   
 ### TypeScript Error
 
-::::warning
+::::info
 This issue has been fixed because type declarations has been added to CustUp
 ::::
 

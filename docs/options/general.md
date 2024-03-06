@@ -228,21 +228,9 @@ This option is for setting which tools to be displayed on the default UI, and if
 
 ```js
 const instance1 = new CustUp({
-    allowed_tools: ['tools_dragger', 'upload', 'add_file'] // and this will be their order on the UI
+    allowed_tools: ['upload', 'add_file'] // and this will be their order on the UI
 })
 ```
-
-### show_ui_tools_on_mobile_devices
-
-::::tip Note
-This option only applies to the default UI type
-::::
-
-- *Optional*
-- **Type:** *`boolean`*
-- Default: `true`
-
-For specifying if the header container should be filled with tools on mobile devices or not. It is useful if you want to use the header container for a different thing, set it to `false` in that case.
 
 ## Font
 
@@ -272,7 +260,7 @@ If you set the [css_font_link](#css_font_link) option then you must also set thi
 
 ## File upload
 
-### file_upload
+### file_upload_settings
 
 - *Optional - but required for upload*
 
@@ -282,7 +270,7 @@ This option is used for configuring file upload settings, all the file upload ne
 
 ```js
 const instance1 = new CustUp({
-    file_upload: {
+    file_upload_settings: {
         endpoint_url: 'http://localhost/fileupload',
         files_field_name: 'profileImage',
         form_field: '#form',
