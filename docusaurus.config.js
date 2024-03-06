@@ -154,7 +154,7 @@ const config = {
         appId: 'CTRYI9LL4D',
 
         // Public API key: it is safe to commit it
-        apiKey: 'c1859854840d925bb34f51d27cd08983',
+        apiKey: 'cfee6402987b5ee0571e9ab107588200',
 
         indexName: 'custup-pryxy',
 
