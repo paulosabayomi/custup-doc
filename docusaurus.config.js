@@ -64,11 +64,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/og-logo.png',
       navbar: {
         title: 'CustUp',
         logo: {
-          alt: 'CustUp Custom File Uploader',
+          alt: 'CustUp Open Source Highly Customizable JavaScript File Uploader',
           src: 'img/custup.svg',
         },
         items: [
