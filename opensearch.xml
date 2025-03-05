@@ -4,8 +4,8 @@
   <ShortName>CustUp</ShortName>
   <Description>Search CustUp</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://custup.pryxy.com/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://custup.pryxy.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://custup.pryxy.com/opensearch.xml" />
-  <moz:SearchForm>https://custup.pryxy.com/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://paulosabayomi.github.io/custup-doc/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://paulosabayomi.github.io/custup-doc/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://paulosabayomi.github.io/custup-doc/opensearch.xml" />
+  <moz:SearchForm>https://paulosabayomi.github.io/custup-doc/</moz:SearchForm>
 </OpenSearchDescription>

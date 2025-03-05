@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcustup_doc=self.webpackChunkcustup_doc||[]).push([[4586],{2922:s=>{s.exports=JSON.parse('{"label":"hola","permalink":"/custup-doc/blog/tags/hola","allTagsPath":"/custup-doc/blog/tags","count":1,"unlisted":false}')}}]);
